@@ -92,7 +92,7 @@ export default function ResetPassword() {
 
               {formik.errors.newPassword && formik.touched.newPassword && (
                 <p className="text-red-500 text-sm mt-2 ps-2">
-                  *{formik.errors.email}
+                  *{formik.errors.newPassword}
                 </p>
               )}
             </div>

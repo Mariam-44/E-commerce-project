@@ -45,10 +45,6 @@ export default function WishlistProvider({ children }) {
 
   async function getWishlistProducts() {
     try {
-      if (!token) {
-        toast.error("You must be logged in to view the wishlist.");
-        return;
-      }
 
       const options = {
         url: "https://ecommerce.routemisr.com/api/v1/wishlist",
