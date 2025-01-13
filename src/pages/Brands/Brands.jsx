@@ -58,7 +58,7 @@ export default function Brands() {
             />
           ))
         ) : (
-          <p className="text-center text-gray-600 col-span-12">
+          <p className="text-center text-gray-600 col-span-12  ">
             No brands available at the moment.
           </p>
         )}

@@ -5,7 +5,7 @@ export default function CategoryCard({ categoryInfo, onCategoryClick }) {
 
     return (
       <div
-        className="col-span-4 shadow-md rounded-md overflow-hidden border border-transparent hover:border-primary-300 hover:shadow- hover:shadow-primary-200 transition-all duration-300 cursor-pointer"
+        className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-4 shadow-md rounded-md overflow-hidden border border-transparent hover:border-primary-300 hover:shadow- hover:shadow-primary-200 transition-all duration-300 cursor-pointer"
         onClick={() => onCategoryClick(_id, name)} 
       >
         <img className="w-full h-80 object-cover" src={image} alt={name} />
