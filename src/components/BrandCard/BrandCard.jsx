@@ -5,7 +5,7 @@ export default function BrandCard({ brandInfo, onClick }) {
 
   return (
     <div
-      className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-4 shadow-md rounded-md overflow-hidden border border-transparent hover:border-primary-600 hover:shadow-md hover:shadow-primary-200 transition-all duration-300 cursor-pointer"
+      className="col-span-12 sm:col-span-6 md:col-span-6 lg:col-span-4 xl:col-span-4 shadow-md rounded-md overflow-hidden border border-transparent hover:border-yellow-600/30 hover:shadow-md hover:shadow-yellow-200/30 transition-all duration-300 cursor-pointer"
       onClick={onClick} 
     >
       <div className="w-full h-48 bg-gray-100 flex items-center justify-center overflow-hidden">

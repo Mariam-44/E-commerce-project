@@ -2,44 +2,60 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/Cart.context";
 import { Link } from "react-router-dom";
 
-export default function CartItem({productInfo}) {
-    const {count , price , product } = productInfo
-    const {title , imageCover , category , id} = product
-    let {removeFromCart,updateProductCount} = useContext(CartContext)
+export default function CartItem({ productInfo }) {
+  const { count, price, product } = productInfo;
+  const { title, imageCover, category, id } = product;
+  const { removeFromCart, updateProductCount } = useContext(CartContext);
+
+  const lineTotal = price * count;
+
   return (
-    <>
-      <div className="flex gap-2">
-        <div className="items flex grow bg-gray-100 py-4 px-6 rounded-lg justify-between items-center">
-          <img
-            src={imageCover}
-            alt={title}
-            className="w-24 h-24 object-cover rounded-full border-4 border-white"
-          />
+    <div className="flex items-center gap-4 py-5 border-b border-gray-200">
+      <button
+        onClick={() => removeFromCart({ productId: id })}
+        className="text-gray-400 hover:text-gray-700 transition-colors"
+        aria-label="Remove item"
+      >
+        <i className="fa-solid fa-xmark"></i>
+      </button>
 
-          <h3 className="text-lg font-semibold text-gray-700">
-            <Link to={`/product/${id}`}> {title}</Link>
-           </h3>
-          <h4 className="font-semibold text-gray-500">{category.name}</h4>
+      <img
+        src={imageCover}
+        alt={title}
+        className="w-16 h-16 object-cover rounded"
+      />
 
-          <div className="count flex items-center gap-5">
-            <span>{count}</span>
-            <div className="icons space-y-2 ">
-              <div onClick={()=>{updateProductCount({productId : id , count : count+ 1 })}} className="plus w-6 h-6 rounded-full bg-gray-700 text-white flex justify-center items-center cursor-pointer">
-                <i className="fa-solid fa-plus"></i>
-              </div>
-              <div onClick={()=>{updateProductCount({productId : id , count : count - 1 })}} className="minus w-6 h-6 rounded-full bg-gray-700 text-white flex justify-center items-center cursor-pointer">
-                <i className="fa-solid fa-minus"></i>
-              </div>
-            </div>
-          </div>
+      <div className="flex-grow">
+        <h3 className="text-sm font-semibold text-gray-700 line-clamp-2 pb-1">
+          <Link to={`/product/${id}`}>{title}</Link>
+        </h3>
+        <p className="text-xs text-gray-400 ">{category?.name}</p>
+      </div>
 
-          <span>{price} L.E</span>
-        </div>
+      <div className="flex items-center gap-3">
+        <button
+          onClick={() =>
+            count > 1 && updateProductCount({ productId: id, count: count - 1 })
+          }
+          className="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100 disabled:opacity-40"
+          disabled={count <= 1}
+        >
+          <i className="fa-solid fa-minus text-[10px]"></i>
+        </button>
 
-        <button onClick={()=>{removeFromCart({productId : id})}} className="rounded-md p-3 bg-gray-100 hover:bg-gray-200 transition-colors duration-300">
-          <i className="fa-solid fa-xmark "></i>
+        <span className="w-4 text-center text-sm">{count}</span>
+
+        <button
+          onClick={() => updateProductCount({ productId: id, count: count + 1 })}
+          className="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-gray-600 hover:bg-gray-100"
+        >
+          <i className="fa-solid fa-plus text-[10px]"></i>
         </button>
       </div>
-    </>
+
+      <span className="w-20 text-right text-sm font-semibold text-gray-800">
+        {lineTotal} L.E
+      </span>
+    </div>
   );
 }

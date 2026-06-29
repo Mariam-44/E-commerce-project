@@ -1,42 +1,23 @@
-import React, { useEffect, useState } from "react";
-import Card from "../../components/Card/Card";
-import axios from "axios";
-import Loading from "../../components/Loading/Loading";
+// Home.jsx
+import React from "react";
 import HomeSlider from "../../components/HomeSlider/HomeSlider";
 import CategorySlider from "../../components/CategorySlider/CategorySlider";
+import BrandSlider from "../../components/BrandSlider/BrandSlider";
 import { Helmet } from "react-helmet";
+import AllProducts from "../../components/AllProducts/AllProducts";
+import AdsBanner from "../../components/AdsBanner/AdsBanner";
 
 export default function Home() {
-  const [products, setProducts] = useState(null);
-
-  async function getProducts() {
-    const options = {
-      url: "https://ecommerce.routemisr.com/api/v1/products",
-      method: "GET",
-    };
-    const { data } = await axios.request(options);
-    setProducts(data.data);
-  }
-  useEffect(() => {
-    getProducts();
-  }, []);
   return (
     <>
-    <Helmet>
-      <title>Home Page</title>
-    </Helmet>
-    <HomeSlider/>
-    <CategorySlider/>
-      {products ? (
-        <div className="grid grid-cols-12 gap-4 mt-10">
-          {products.map((product) => (
-            <Card productInfo={product} />
-          ))}
-        </div>
-      ) : (
-        <Loading />
-      )}
-      
+      <Helmet>
+        <title>Home Page</title>
+      </Helmet>
+      <HomeSlider />
+      <BrandSlider />
+      <AdsBanner/>
+      <CategorySlider />
+      <AllProducts/>
     </>
   );
 }

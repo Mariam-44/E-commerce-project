@@ -37,37 +37,42 @@ function App() {
     },
     {
       path: "/",
-      element: <ProtectedRoute><Layout /></ProtectedRoute>,
+      element: <Layout />,
       children: [
         { index: true, element: <Home /> },
-        { path: "cart", element: <Cart /> },
         { path: "product/:id", element: <CardDetails /> },
-        { path: "checkout", element: <Checkout /> },
-        { path: "allorders", element: <Orders /> },
         { path: "categories", element: <Category /> },
         { path: "brands", element: <Brands /> },
-        { path: "wishlist", element: <WishList/> },
-        { path: "Products", element: <Allproducts/> },
+        { path: "Products", element: <Allproducts /> },
+      ],
+    },
+    {
+      path: "/",
+      element: <ProtectedRoute><Layout /></ProtectedRoute>,
+      children: [
+        { path: "cart", element: <Cart /> },
+        { path: "checkout", element: <Checkout /> },
+        { path: "allorders", element: <Orders /> },
+        { path: "wishlist", element: <WishList /> },
       ],
     },
   ]);
-  
+
   return (
     <>
+    
       <TokenProvider>
         <UserProvider>
-         
-            <CartProvider> 
-              <WishlistProvider> 
+          <CartProvider>
+            <WishlistProvider>
               <RouterProvider router={router} />
-               </WishlistProvider>
-            </CartProvider>
-         
+            </WishlistProvider>
+          </CartProvider>
         </UserProvider>
       </TokenProvider>
       <Toaster />
     </>
   );
-} 
+}
 
 export default App;

@@ -125,9 +125,34 @@ export default function CartProvider({ children }) {
     
   }
 
+  async function applyCoupon({ couponName }) {
+    try {
+      const options = {
+        url: "https://ecommerce.routemisr.com/api/v2/cart/applyCoupon",
+        method: "PUT",
+        headers: {
+          token,
+        },
+        data: {
+          couponName,
+        },
+      };
+      let { data } = await axios.request(options);
+      console.log(data);
+      if (data.status === "success") {
+        setcartInfo(data);
+        return { success: true };
+      }
+      return { success: false };
+    } catch (error) {
+      console.log(error);
+      return { success: false, error };
+    }
+  }
+
 
   return (
-    <CartContext.Provider value={{ addProduct , getCartProduct , cartInfo , removeFromCart , clearCart , updateProductCount}}>
+    <CartContext.Provider value={{ addProduct , getCartProduct , cartInfo , removeFromCart , clearCart , updateProductCount , applyCoupon}}>
       {children}
     </CartContext.Provider>
   );

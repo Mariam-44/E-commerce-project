@@ -31,7 +31,6 @@ export default function Signup() {
   });
 
   async function sendData(values) {
-    const loadingID = toast.loading("Waiting...");
     try {
       const options = {
         url: "https://ecommerce.routemisr.com/api/v1/auth/signup",
@@ -41,7 +40,6 @@ export default function Signup() {
 
       let { data } = await axios.request(options);
       if (data.message === "success") {
-        toast.dismiss(loadingID)
         toast.success("user account created successfully");
       }
     } catch (error) {
@@ -151,7 +149,7 @@ export default function Signup() {
             </p>
           )}
         </div>
-        <button className="btn" type="submit">
+        <button className="bg-yellow-500 text-white px-4 py-2 rounded-full hover:bg-yellow-600 transition-colors duration-200" type="submit">
           Sign Up
         </button>
       </form>

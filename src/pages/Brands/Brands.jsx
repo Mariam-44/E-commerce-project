@@ -43,7 +43,7 @@ export default function Brands() {
      <Helmet>
       <title>Brands Page</title>
     </Helmet>
-      <h1 className="text-4xl font-bold text-center mt-10 text-primary-500">
+      <h1 className="text-4xl font-bold text-center mt-10 text-black">
         All Brands
       </h1>
       <div className="grid grid-cols-12 gap-4 py-10 container">

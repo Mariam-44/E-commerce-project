@@ -24,7 +24,7 @@ export default function WishList() {
         <h2 className="text-center">
           Oops! Your wishlist is empty. Start shopping now by clicking the button below and find something you love!
         </h2>
-        <Link to="/" className="btn w-fit bg-primary-600 hover:bg-primary-700 text-white mt-4">
+        <Link to="/" className="btn w-fit bg-yellow-600 hover:bg-yellow-700 text-white mt-4 px-3 py-2 rounded-md">
           Back to Home
         </Link>
       </section>
@@ -43,12 +43,12 @@ export default function WishList() {
         <h2 className="font-semibold">Your Wishlist</h2>
       </div>
 
-      <div className="space-y-4 mt-6">
+       <div className="mt-6">
         {wishlistInfo?.data?.map((product) => (
           <WishlistItem
             key={product._id}
             productInfo={product}
-            removeProductFromWishlist={removeProductFromWishlist} 
+            removeProductFromWishlist={removeProductFromWishlist}
           />
         ))}
       </div>
