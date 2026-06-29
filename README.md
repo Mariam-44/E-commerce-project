@@ -2,7 +2,7 @@
 
 Fresh Cart is a React-based e-commerce web application where users can browse products, manage a wishlist and cart, and place orders. Guests can freely explore the catalog, while cart, wishlist, and order features require an account.
 
-**Live demo:** https://e-commerce-project-black-one.vercel.app/
+**Live demo:** https://e-commerce-project-nhgmwo87y-mariams-projects-7b7fa620.vercel.app
 
 ## Features
 
