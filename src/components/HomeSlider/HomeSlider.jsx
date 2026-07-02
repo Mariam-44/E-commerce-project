@@ -1,12 +1,17 @@
+import React from "react";
+import Slide1 from "../../assets/images/slide1.jpg";
+import Slide2 from "../../assets/images/slide2.jpg";
+import Slide3 from "../../assets/images/slide3.jpg";
+
 const slideBanners = [
   {
-    img: "https://i.pinimg.com/736x/64/8e/ea/648eeacc694bcd399bca9f7a23cc02dc.jpg",
+    img: Slide1,
   },
   {
-    img: "https://i.pinimg.com/1200x/f8/05/31/f8053103e7d6c85c58b36d4c407e1370.jpg",
+    img: Slide2,
   },
   {
-    img: "https://i.pinimg.com/736x/96/7b/59/967b59727b386f6d10bcf7b7481b1a7c.jpg",
+    img: Slide3,
   },
 ];
 
