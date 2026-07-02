@@ -8,29 +8,29 @@ import img6 from "../../assets/images/get-google-play.png";
 export default function Footer() {
   return (
     <>
-      <footer className="bg-gray-100 py-8 mt-3 ">
-        <div className="container mx-auto ">
+      <footer className="bg-gray-100 py-8 mt-3">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-6">
             <h3 className="text-lg font-semibold">Get the FreshCart App</h3>
             <p className="text-sm text-gray-600">
               We'll send you a link, open it on your phone to download the app
             </p>
-            <div className="grid grid-cols-12 gap-2 mt-4">
+            <div className="grid grid-cols-1 sm:grid-cols-12 gap-2 mt-4">
               <input
                 type="email"
                 placeholder="Email Address"
-                className="col-span-10 form-control"
+                className="sm:col-span-9 form-control"
               />
-              <button className="col-span-2 btn text-white text-sm bg-yellow-500 hover:bg-yellow-600">
+              <button className="sm:col-span-3 btn text-white text-sm bg-yellow-500 hover:bg-yellow-600 whitespace-nowrap">
                 SHARE APP LINK
               </button>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-between items-center border-t border-gray-300 pt-6">
-            <div className="mb-4 lg:mb-0 flex items-center">
-              <p className="text-sm font-medium pe-2">Payment Partners</p>
-              <div className="flex items-center mt-2 space-x-4">
+          <div className="flex flex-col lg:flex-row lg:flex-wrap lg:justify-between lg:items-center gap-6 border-t border-gray-300 pt-6">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <p className="text-sm font-medium sm:pe-2">Payment Partners</p>
+              <div className="flex flex-wrap items-center gap-4">
                 <img src={img1} alt="Amazon Pay" className="h-6" />
                 <img src={img2} alt="American Express" className="h-6" />
                 <img src={img3} alt="MasterCard" className="h-6" />
@@ -38,11 +38,11 @@ export default function Footer() {
               </div>
             </div>
 
-            <div className="flex items-center">
-              <p className="text-sm font-medium pe-2">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <p className="text-sm font-medium sm:pe-2">
                 Get deliveries with FreshCart
               </p>
-              <div className="flex items-center mt-2 space-x-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <img src={img5} alt="App Store" className="h-8" />
                 <img src={img6} alt="Google Play" className="h-8" />
               </div>

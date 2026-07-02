@@ -1,22 +1,19 @@
 const slideBanners = [
   {
-   
     img: "https://i.pinimg.com/736x/64/8e/ea/648eeacc694bcd399bca9f7a23cc02dc.jpg",
   },
   {
     img: "https://i.pinimg.com/1200x/f8/05/31/f8053103e7d6c85c58b36d4c407e1370.jpg",
   },
   {
-   
     img: "https://i.pinimg.com/736x/96/7b/59/967b59727b386f6d10bcf7b7481b1a7c.jpg",
   },
 ];
 
-
 export default function HomeSlider() {
   return (
-    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0 ">
-      {/* Swipeable banner */}
+    <div className="grid grid-cols-1 lg:grid-cols-12 gap-0">
+  
       <div className="lg:col-span-12">
         <swiper-container
           loop="true"
@@ -26,14 +23,13 @@ export default function HomeSlider() {
         >
           {slideBanners.map((slide, i) => (
             <swiper-slide key={i}>
-              <div className="relative overflow-hidden" style={{ height: "500px", width: "100%" }}>
+              <div className="relative overflow-hidden w-full h-[220px] sm:h-[320px] md:h-[420px] lg:h-[500px]">
                 <img
                   src={slide.img}
                   alt={slide.title}
                   className="absolute inset-0 w-full h-full object-cover"
                 />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/40 to-transparent" />
-                
+                <div className="absolute inset-0 bg-gradient-to-r from-black/45 via-black/40 to-transparent" />
               </div>
             </swiper-slide>
           ))}

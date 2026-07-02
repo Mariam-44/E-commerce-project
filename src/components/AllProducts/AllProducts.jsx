@@ -1,4 +1,3 @@
-// AllProducts.jsx
 import React, { useEffect, useState, useContext } from "react";
 import Card from "../../components/Card/Card";
 import axios from "axios";
@@ -81,12 +80,13 @@ export default function AllProducts() {
   const bestSellers = products.slice(-3);
 
   return (
-    <>
-      <Helmet>
-        <title>All Products</title>
-      </Helmet>
+  <>
+    <Helmet>
+      <title>All Products</title>
+    </Helmet>
 
-      {/* New Arrivals */}
+    <div className="px-4 sm:px-6 lg:px-8">
+
       <section className="mt-10 mb-8">
         <div className="flex items-center justify-between mb-5">
           <h2 className="text-xl font-bold text-gray-900">New Arrivals</h2>
@@ -94,7 +94,7 @@ export default function AllProducts() {
             View All →
           </Link>
         </div>
-        <div className="grid grid-cols-12 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
           {newArrivals.map((product) => (
             <Card key={product._id} productInfo={product} />
           ))}
@@ -114,6 +114,7 @@ export default function AllProducts() {
           ))}
         </div>
       </section>
-    </>
-  );
+    </div>
+  </>
+);
 }
