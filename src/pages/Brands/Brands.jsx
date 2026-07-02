@@ -63,7 +63,6 @@ export default function Brands() {
           </p>
         )}
       </div>
-
   
       {selectedBrand && (
         <BrandDetails
