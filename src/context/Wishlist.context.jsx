@@ -37,7 +37,7 @@ export default function WishlistProvider({ children }) {
       }
     } catch (error) {
       console.error(error);
-      toast.error("An error occurred while adding the product.");
+     
     } finally {
       toast.dismiss(loadingID);
     }
@@ -64,7 +64,7 @@ export default function WishlistProvider({ children }) {
       }
     } catch (error) {
       console.error("Error fetching wishlist: ", error);
-      toast.error("An error occurred while fetching the wishlist.");
+     
     }
   }
 

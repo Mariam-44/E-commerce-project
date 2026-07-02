@@ -1,18 +1,21 @@
 import React from 'react'
+import adv1 from '../../assets/images/adv1.jpg'
+import adv2 from '../../assets/images/adv2.jpg'
+import adv from '../../assets/images/adv.jpg'
 
 export default function AdsBanner() {
   const adBanners = [
     {
       id: 1,
-      img: "https://mma.prnasia.com/media/2994746/image1.jpg?p=distribution",
+      img: adv,
     },
     {
       id: 2,
-      img: "https://i.pinimg.com/1200x/b4/6c/79/b46c79b816ca077b627dd734146cec0d.jpg",
+      img: adv1,
     },
     {
       id: 3,
-      img: "https://www.bgr.com/bgr/wp-content/uploads/2023/01/galaxy-s23-specs-leak-2.jpg",
+      img: adv2,
     },
   ];
 
